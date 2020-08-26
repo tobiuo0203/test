@@ -1,56 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<title>コロナへの関心と傾向</title>
-<meta name="keywords" content="ページのキーワードA,B,C" />
-<meta name="description" content="ページの説明" />
-<link rel="stylesheet" href="static/index.css" type="text/css" />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <title>test</title>
+  <meta charset="UTF-8">
 </head>
 <body>
-<div id="outer">
-<div id="header"><div id="head-inner"><h1>コロナへの関心と傾向</h1>
-<p class="description">毎日集計しています</p></div>
-</div>
-<div id="contents">
-<h2>「コロナ」を含むツイート数</h2>
-<!-- line chart canvas element -->
-<canvas id="buyers" width="600" height="400"></canvas>
-
-<script>
-    // line chart data
-    var buyerData = {
-        labels : ["2020/8/4","2020/8/5","2020/8/6","2020/8/7","2020/8/8","2020/8/9"],
-        datasets : [
-        {
-            fillColor : "rgba(172,194,132,0.4)",
-            strokeColor : "#ACC26D",
-            pointColor : "#fff",
-            pointStrokeColor : "#9DB86D",
-            data : [381300,447600,366900,337473,301090,268199]
-        }
-    ]
-    }
-    // get line chart canvas
-    var buyers = document.getElementById('buyers').getContext('2d');
-    // draw line chart
-    new Chart(buyers).Line(buyerData);
-    
-</script>
-
-</div>
-
-
-<div class="side">
-<ul>
-
-</ul>
-</div>
-</div>
-<div id="footer">© 2020 twitter </div>
-</div></body>
+<div id="a"></div>
+<script type="text/javascript" src="static/demo.js"></script>
+<div id="b"></div>
+</body>
 </html>
