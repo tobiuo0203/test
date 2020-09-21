@@ -4,7 +4,7 @@ window.onload = function() {
 
 //alert("start2")
 
-axios.get('static/data.json')
+axios.get('/home/tobiuo0203/static/data.json')
 .then(function (response) {
     // handle success
     id=document.getElementById('id');
