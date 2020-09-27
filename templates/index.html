@@ -1,12 +1,77 @@
-<!DOCTYPE html>
-<html>
+<html lang="ja">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
 <head>
-  <title>test</title>
-  <meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>コロナへの関心と傾向</title>
+<meta name="keywords" content="ページのキーワードA,B,C" />
+<meta name="description" content="ページの説明" />
+<link rel="stylesheet" href="static/index.css" type="text/css" />
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
 </head>
 <body>
-<div id="id"></div>
+<div id="outer">
+<div id="header"><div id="head-inner"><h1>コロナへの関心と傾向</h1>
+<p class="description">毎日集計しています</p></div>
+</div>
+<div id="contents">
+<h2>「コロナ」を含むツイート数</h2>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="static/demo.js"></script>
-</body>
+<div id="id"></div>
+
+<!-- line chart canvas element -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+  <canvas id="buyers" width="600" height="400"></canvas>
+<script>
+    // line chart data
+    var buyerData = {
+        labels : ["2020/8/4","2020/8/5","2020/8/6","2020/8/7","2020/8/8","2020/8/9","2020/8/10","2020/8/11","2020/8/12","2020/8/13","2020/8/14","2020/8/15","2020/8/16","2020/8/17","2020/8/18","2020/8/19","2020/8/20","2020/8/21","2020/8/22","2020/8/23","2020/8/24","2020/8/25","2020/8/26","2020/8/27","2020/8/28","2020/8/29","2020/8/30","2020/8/31","2020/9/1","2020/9/2","2020/9/3","2020/9/4","2020/9/5","2020/9/6","2020/9/7","2020/9/8","2020/9/9","2020/9/16","2020/9/17","2020/9/18","2020/9/19","2020/9/20","2020/9/21","2020/9/22","2020/9/23","2020/9/24","2020/9/25","2020/9/26"],
+        datasets : [
+        {
+            fillColor : "rgba(172,194,132,0.4)",
+            strokeColor : "#ACC26D",
+            pointColor : "#fff",
+
+            
+            pointStrokeColor : "#9DB86D",
+            data : [381300,447600,366900,337473,301090,268199,247542,278100,281100,310500,324000,293100,260700,261300,275100,224400,268200,291900,246300,223800,232200,245700,243900,229800,257700,253800,211200,205800,206100,218700,187800,196200,194400,159000,184200,162000,169200,177900,173100,169500,193200,162900,162900,171300,171900,169200,197700,204600,]
+        }
+    ]
+    }
+    // get line chart canvas
+    var buyers = document.getElementById('buyers').getContext('2d');
+    // draw line chart
+    new Chart(buyers).Line(buyerData);
+    
+</script>
+
+</div>
+
+
+<div class="side">
+<ul>
+
+</ul>
+</div>
+</div>
+  
+    
+  </div>
+</div>
+
+<div id="footer">© 2020 twitter </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</div></body>
 </html>
