@@ -1,6 +1,10 @@
 
 import csv
 import json
+import datetime
+
+dt_now=datetime.datetime.now()
+dt_now=dt_now.strftime("%Y/%m/%d")
 
 with open('/home/tobiuo0203/Book3.csv') as ff:
     reader = csv.reader(ff)
@@ -106,13 +110,10 @@ data24=sum(data24)*300
 
 data=data1+data2+data3+data4+data5+data6+data7+data8+data9+data10+data11+data12+data13+data14+data15+data16+data17+data18+data19+data20+data21+data22+data23+data24
 
-with open("/home/tobiuo0203/static/data.json", mode='ab+') as f:
-    f.seek(-1, 2)
-    f.truncate()
-    f.write(','.encode())
-    f.write(json.dumps(data).encode())
-    f.write(']'.encode())
+with open("/home/tobiuo0203/static/data.json", mode='r') as f:
+    df=json.load(f)
+    df["datetime"].append(dt_now)
+    df["data"].append(data)
 
-
-
-
+with open("/home/tobiuo0203/static/data.json", mode='w') as f:
+    json.dump(df,f)
